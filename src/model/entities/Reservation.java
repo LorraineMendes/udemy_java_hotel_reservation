@@ -65,12 +65,5 @@ public class Reservation {
                 " nights }";
     }
 
-    /* public void setCheckIn(Date checkIn) {
-        this.checkIn = checkIn;
-    }As datas nao podem ser alteradas aleatoriamente, vamos implementar metodos para essa alteracao*/
-
-    /*public void setCheckOut(Date checkOut) {
-        this.checkOut = checkOut;
-    } As datas nao podem ser alteradas aleatoriamente, vamos implementar metodos para essa alteracao*/
 
 }
