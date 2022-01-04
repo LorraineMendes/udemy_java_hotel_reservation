@@ -38,9 +38,17 @@ public class Reservation {
         return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
 
-    public void updateDate(Date checkIn, Date checkOut){
+    public String updateDate(Date checkIn, Date checkOut){
+        Date now = new Date();
+        if (checkIn.before(now)||checkOut.before(now)){
+            return "Check-out date must be after check-in date";
+        }
+        if (!checkOut.after(checkOut)){
+            return " Check-out date must be after check-in date";
+        }
         this.checkIn = checkIn;
         this.checkOut = checkOut;
+        return null;
     }
 
     @Override
@@ -49,7 +57,7 @@ public class Reservation {
                 "roomNumber=" + roomNumber +
                 ", checkIn: " + sdf.format(checkIn) +
                 ", checkOut: " + sdf.format(checkOut) +
-                duration() +
+                " " + duration() +
                 " nights }";
     }
 
